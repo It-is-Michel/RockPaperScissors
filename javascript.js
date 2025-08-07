@@ -16,6 +16,19 @@ function getHumanChoice() {
     humanChoice = humanChoice.toLowerCase();
     return humanChoice;
 }
+// returns the winner: "computer", "human", "tie"
+function getWinner(computerChoice, humanChoice) {
+    // decide who wins
+    if (computerChoice === humanChoice) {
+        return "tie";
+    } else if ((computerChoice === "rock" && humanChoice === "scissors")
+            || (computerChoice === "paper" && humanChoice === "rock")
+            || (computerChoice === "scissors" && humanChoice === "paper")) {
+        return "computer";
+    } else {
+        return "human";
+    }
+}
 
 let humanScore = 0;
 let computerScore = 0;
