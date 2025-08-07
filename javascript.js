@@ -1,7 +1,7 @@
-// returns a string: "rock", "paper" or "scissors"
+// Returns a string: "rock", "paper" or "scissors"
 function getComputerChoice() {
     let randomNumber = Math.random() * 3;
-    // depending on the number, return "rock", "paper" or "scissors"
+    // Depending on the number, return "rock", "paper" or "scissors"
     if (randomNumber <= 1){
         return "rock";
     } else if (randomNumber <= 2) {
@@ -10,15 +10,15 @@ function getComputerChoice() {
         return "scissors";
     }
 }
-// takes the user's choice
+// Takes the user's choice
 function getHumanChoice() {
     let humanChoice = prompt('Choose "rock", "paper" or "scissors".');
     humanChoice = humanChoice.toLowerCase();
     return humanChoice;
 }
-// returns the winner: "computer", "human", "tie"
+// Returns the winner: "computer", "human", "tie"
 function getWinner(computerChoice, humanChoice) {
-    // decide who wins
+    // Decide who wins
     if (computerChoice === humanChoice) {
         return "tie";
     } else if ((humanChoice === "rock" && computerChoice === "scissors")
