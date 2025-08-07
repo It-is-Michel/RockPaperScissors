@@ -21,14 +21,15 @@ function getWinner(computerChoice, humanChoice) {
     // decide who wins
     if (computerChoice === humanChoice) {
         return "tie";
-    } else if ((computerChoice === "rock" && humanChoice === "scissors")
-            || (computerChoice === "paper" && humanChoice === "rock")
-            || (computerChoice === "scissors" && humanChoice === "paper")) {
-        return "computer";
-    } else {
+    } else if ((humanChoice === "rock" && computerChoice === "scissors")
+            || (humanChoice === "paper" && computerChoice === "rock")
+            || (humanChoice === "scissors" && computerChoice === "paper")) {
         return "human";
+    } else {
+        return "computer";
     }
 }
+
 
 let humanScore = 0;
 let computerScore = 0;
