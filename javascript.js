@@ -29,22 +29,35 @@ function getWinner(computerChoice, humanChoice) {
         return "computer";
     }
 }
-// Play a round;
-// log the winner;
-// and incremenet the score of the winner.
-function playRound(computerChoice, humanChoice) {
-    let winner = getWinner(computerChoice, humanChoice);
-    // Log winner and increment winner score
-    if (winner === "tie") {
-        console.log(`TIE! Both said ${humanChoice}.`);
-    } else if (winner === "human") {
-        console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
-        humanScore++;
-    } else {
-        console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
-        computerScore++;
+
+function playGame () {
+    let humanScore = 0;
+    let computerScore = 0;
+    // Play a round;
+    // log the winner;
+    // and incremenet the score of the winner.
+    function playRound(computerChoice, humanChoice) {
+        let winner = getWinner(computerChoice, humanChoice);
+        // Log winner and increment winner score
+        if (winner === "tie") {
+            console.log(`TIE! Both said ${humanChoice}.`);
+        } else if (winner === "human") {
+            console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+            humanScore++;
+        } else {
+            console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+            computerScore++;
+        }
     }
+    // Play 5 games
+    for (let gameNum = 0; gameNum < 5; gameNum++){
+        let computerChoice = getComputerChoice();
+        let humanChoice = getHumanChoice();
+        playRound(computerChoice, humanChoice)
+    }
+    // Log computer and human scores
+    console.log(`Computer: ${computerScore}
+        Human: ${humanScore}`);
 }
 
-let humanScore = 0;
-let computerScore = 0;
+playGame()
