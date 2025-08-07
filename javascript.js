@@ -57,7 +57,7 @@ function playGame () {
     }
     // Log computer and human scores
     console.log(`Computer: ${computerScore}
-        Human: ${humanScore}`);
+Human: ${humanScore}`);
 }
 
 playGame()
