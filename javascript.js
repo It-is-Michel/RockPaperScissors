@@ -29,7 +29,22 @@ function getWinner(computerChoice, humanChoice) {
         return "computer";
     }
 }
-
+// Play a round;
+// log the winner;
+// and incremenet the score of the winner.
+function playRound(computerChoice, humanChoice) {
+    let winner = getWinner(computerChoice, humanChoice);
+    // Log winner and increment winner score
+    if (winner === "tie") {
+        console.log(`TIE! Both said ${humanChoice}.`);
+    } else if (winner === "human") {
+        console.log(`You win! ${humanChoice} beats ${computerChoice}.`);
+        humanScore++;
+    } else {
+        console.log(`You lose! ${computerChoice} beats ${humanChoice}.`);
+        computerScore++;
+    }
+}
 
 let humanScore = 0;
 let computerScore = 0;
